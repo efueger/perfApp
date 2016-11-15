@@ -1,0 +1,133 @@
+{
+    "ARCHITECTURE" : {
+        "CACHE_LINE_SIZE_IN_BYTES" : "64",
+        "NB_FLOP_PER_PACKED_SIMD" : "2",
+        "NB_FLOP_PER_PACKED_SSE" : "2"
+    },
+    "BUILDTIME" : {
+        "CC" : "",
+        "FC" : "",
+        "MPICC" : "",
+        "MPIF77" : "",
+        "MPIF90" : "",
+        "OMPFLAGS" : "",
+        "FLAGS" : "",
+        "NOOPTFLAGS" : "",
+        "LINKFLAGS" : ""
+    },
+    "RUNTIME" : {
+        "MPIRUN_OPT" : "",
+        "OMP_PROC_BIND" : "TRUE",
+        "GOMP_CPU_AFFINITY" : "",
+        "KMP_AFFINITY" : "",
+        "LOGID" : ""
+    },
+    "BENCH" : {
+        "STREAM" : {
+            "URL" : "http://www.cs.virginia.edu/stream/FTP/Code/"
+        },
+        "STREAM2" : {
+            "PREREQ" : "http://www.cs.virginia.edu/stream/FTP/Code/",
+            "URL" : "http://www.cs.virginia.edu/stream/stream2/"
+        },
+        "IOZONE" : {
+            "URL" : "http://www.iozone.org/src/current/",
+            "VERSION" : "3_457",
+            "MKARCH" : "linux"
+        },
+        "IOR" : {
+            "URL" : "https://github.com/LLNL/ior.git",
+            "CONFIGURE" : {
+                "OPTIONS" : "--with-posix --with-mpiio --with-hdf5",
+                "CFLAGS" : "-O3 -g -march=native -I/usr/lib/openmpi/include -I/usr/include/hdf5/openmpi",
+                "LDFLAGS" : "-L/usr/lib/openmpi/lib -L/usr/lib/x86_64-linux-gnu/hdf5/openmpi",
+                "LIBS" : "-lmpi -lhdf5"
+            },
+            "RUN" : {
+                "-a" : "POSIX MPIIO HDF5",
+                "-b" : "8 8 4k 4k 4k 4k 4k   2m   2m 2m 2m 2m",
+                "-t" : "8 8 1k 2k 2k 4k 4k 512k   1m 1m 2m 2m",
+                "-J" : "4 8 1k 1k 2k 2k 4k 512k 512k 1m 1m 2m",
+                "OTHER" : "-i 2"
+            },
+            "LOGID" : "openmpi"
+        },
+        "HPLINPACK" : {
+            "BLAS" : {
+                "BUILDBLAS" : {
+                    "URL" : "http://www.netlib.org/blas/",
+                    "VERSION" : "3.6.0"
+                },
+                "USEBLAS" : {
+                    "LIBBLAS" : ""
+                }
+            },
+            "URL" : "http://www.netlib.org/benchmark/hpl/",
+            "VERSION" : "2.2",
+            "LOGID" : "netlib-blas openmpi"
+        },
+        "HYDRO" : {
+            "URL" : "https://github.com/HydroBench/Hydro.git",
+            "CFLAGS_MPI" : "-I/usr/lib/openmpi/include",
+            "LDFLAGS_MPI" : "-L/usr/lib/openmpi/lib -lmpi",
+            "LIBNUMA" : "/usr/lib/x86_64-linux-gnu/libnuma.so",
+            "NXY"     : "100 100 250 250 500 500",
+            "NXYSTEP" : " 25  50  75 125 125 250",
+            "TEND"    : "250",
+            "LOGID" : "openmpi"
+        },
+        "NAS" : {
+            "URL" : "http://www.nas.nasa.gov/assets/npb/",
+            "VERSION" : "3.3.1",
+            "MPIID" : "openmpi"
+        }
+    },
+    "UCASE" : {
+        "LIBPFM4" : {
+            "URL" : "https://sourceforge.net/projects/perfmon2/files/libpfm4/",
+            "VERSION" : "4.7.0"
+        },
+        "PERF-STAT" : {
+            "GFLOPS" : {
+               "PERFLIST" : "",
+               "LIBPFM4" : "FP_COMP_OPS_EXE SIMD_FP_256"
+            },
+            "CACHEMISSES" : {
+               "PERFLIST" : "cache-misses L1-dcache-load-misses L1-dcache-prefetch-misses",
+               "LIBPFM4" : "LLC_MISSES MEM_LOAD_UOPS_RETIRED:L2_MISS"
+            }
+        },
+        "PERF-REPORT" : {
+            "PERFLIST" : "cpu-clock page-faults cache-misses",
+            "LIBPFM4" : "FP_COMP_OPS_EXE SIMD_FP_256 LLC_MISSES"
+        },
+        "PERF-TOP" : {
+            "PERFLIST" : "cpu-clock",
+            "LIBPFM4" : ""
+        },
+        "OBJDUMP" : "addsd vaddsd addpd mulsd vmulsd mulpd movsd vmovsd movpd"
+    },
+    "PLOT" : {
+        "FIGWIDTH" : "",
+        "FIGHEIGHT" : "",
+        "DPI" : "",
+        "FONTSIZE" : "",
+        "LEGENDFONTSIZE" : "",
+        "RLM" : {
+            "XMIN" : "",
+            "XMAX" : "",
+            "YMAX" : "",
+            "ANNOTATIONFONTSIZE" : ""
+        },
+        "PERF-TOP" : {
+            "MINPERCENTAGE" : "",
+            "EXCLUDE" : ""
+        },
+        "PERF-REPORT" : {
+            "MINPERCENTAGE" : "25",
+            "EXCLUDE" : ""
+        },
+        "LOGID_INCLUDE" : "",
+        "LOGID_EXCLUDE" : ""
+    }
+}

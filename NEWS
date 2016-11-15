@@ -1,0 +1,17 @@
+2016.11.10: for use cases, enable "|" in json "ARGS" keyword (=> enable weak scaling)
+-----------
+
+2016.10.20: add support for perf-report (plot -r)
+-----------
+
+2016.10.17: refactoring and improve coverage / MLK before to go on
+-----------
+
+2016.10.14: include MLK reports on github pushs / pulls
+-----------
+
+2016.10.13: include coverage reports on github pushs / pulls
+-----------
+
+2016.10.09: very first version (runs OK + validation OK with TravisCI)
+-----------

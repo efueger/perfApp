@@ -1,0 +1,66 @@
+Frequently Asked Questions:
+
+1. I don't know how to tune perfApp (with json file) for a given architecture.
+
+   1.1. Run "perf list", look at what it says.
+
+   1.2. Use perf-list information to setup json PERFLIST keywords.
+
+   1.3. Run "./perfApp check", look at showevtinfo.log.
+
+   1.4. Use showevtinfo.log to setup json LIBPFM4 keywords.
+
+2. I've just modified the json, perfApp can no more read it.
+
+   You likely have a missing or extra comma in the json (at line where error is triggered).
+
+3. When running check/bench/ucase, I get compilation (build KO) or run time errors (mpirun KO).
+
+   Depending on your version of compilers or MPI, you need to tune FLAGS and/or MPIRUN_OPT in the
+   json file.
+
+4. When running plot after ucase (-s -r -t), I get weird symbols like "0x0123456" in logs/plots.
+
+   Add -g to compile options in the use case prep.sh (otherwise you get function memory addresses
+   instead of function names).
+
+5. When running plot, results look questionnable to me ("not enough" cache misses or GFlops).
+
+   You may not have used relevant HW events: run check mode, add/suppress HW events from the json
+   according to your architecture. Use plot -v to get more information on plots.
+
+   Also, you may use "bench -u" and "ucase -u pfb* -s" and plot the roof line model: this can help
+   to tune the json for your architecture. You should be able to "see" metrics associated to
+   each benchmark on the plot (plot -u pfb* -a -v): if not, this means your json is not yet relevant.
+   Depending on HW events your architecture provides (or not), you may get (or not) correct metric
+   estimation: in all cases, you can get the best estimation your architecture allow.
+
+6. Depending on benchmarks, runs may last (really) a long time if the size is too low/high.
+
+   This really depends on the benchmark. For instance with HPLinpack, using (too) big blocks degrade
+   performances (swap): you get big blocks with (too) big/small sizes (bench -s) when associated
+   divisors are (too) small/big respectively.
+
+7. GIT related problems.
+
+   7.1. I've got errors or conflicts when I pull from GitHub.
+
+   Maintainers may have modified (github) master's history, you need to update your master:
+   "git fetch origin master; git checkout master; git reset --hard origin/master;".
+   Always fetch before pull, pull if possible, reset hard otherwise.
+
+   7.2. My repository has become "big" (several MB or more).
+
+   Run "git prune".
+
+8. Python related problems.
+
+   8.1. I get this kind of error : "IOError: [Errno 24] Too many open files".
+
+   Try something like "ulimit -n 1024": increase the number of files your system can support.
+
+   8.2. I get this kind of error : "ImportError: No module named '*[Tt]k*'".
+
+   Do you use a python built from source ? If yes, did you build python with tk support ? (use
+   something like --with-tk at configure time, check that tk install has been found and X11
+   packages tk may depend on are installed)

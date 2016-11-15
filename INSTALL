@@ -1,0 +1,21 @@
+You need to have installed:
+1. To run perfApp, you need to install:
+   1.1. all necessary python modules:
+        on debian, for python2, apt-get install python-minimal python-argparse python-matplotlib python-numpy python-psutil
+        on debian, for python3, apt-get install python3-minimal python-argparse python3-matplotlib python3-numpy python3-psutil
+   1.2. perf, intel or gnu compilers, wget, git, objdump:
+        on debian, apt-get install linux-tools g++ gcc gfortran openmpi-bin libopenmpi-dev wget git binutils
+   1.3. all necessary packages needed by benchmarks:
+        on debian, when using apt-get to install BLAS for HPLinpack, apt-get install libblas-dev (you could use MKL too)
+        on debian, for Hydro, apt-get install libnuma1 libnuma-dev
+        on debian, for IOR, apt-get install autoconf automake libhdf5-openmpi-*
+2. To run perfApp test suite, you need to install pylint, grep, wc, find, cat, stdbuf, tee, ping, sed:
+   on debian, apt-get install pylint grep coreutils findutils inetutils-ping sed
+   on debian, for python2, pip install coverage pympler
+   on debian, for python3, pip3 install coverage pympler
+
+This tool is based on linux perf tools:
+1. allow users to run perf (not paranoid mode)
+   on debian (persistent modification), add kernel.perf_event_paranoid = -1 in /etc/sysctl.conf
+   on debian (non persistent modification), sh -c "echo -1 > /proc/sys/kernel/perf_event_paranoid"
+2. run as root
