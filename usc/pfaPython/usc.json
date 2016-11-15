@@ -1,0 +1,7 @@
+{
+  "EXE" : "./pfaPython.py",
+  "ARGS" : "200000000 200000000",
+  "COLOR" :  "r",
+  "MARKER" : "s",
+  "LABEL" : "python script"
+}

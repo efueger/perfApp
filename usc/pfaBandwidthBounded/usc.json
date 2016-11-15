@@ -1,0 +1,9 @@
+{
+  "LOGID" : "g++",
+  "EXE" : "./pfaFlopsCacheMisses.exe",
+  "THD" : "1 2 4",
+  "ARGS" : "1 2 80 2000",
+  "COLOR" :  "r g b",
+  "MARKER" : "^ ^ ^",
+  "LABEL" : "bandwidth bounded"
+}
