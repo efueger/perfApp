@@ -1,0 +1,392 @@
+Configuring ...
+Configuring using file : ./dev/debian.i7-3687U.more.json ...
+Configuring architecture features ...
+Configuring cache line size with 64 ...
+Configuring flop per packed SIMD with 2 ...
+Configuring flop per packed SSE with 2 ...
+Configuring build time ...
+Configuring OMPFLAGS with -fopenmp ...
+Configuring run time ...
+Configuring run time with MPIRUN_OPT = --map-by core --allow-run-as-root ...
+Configuring run time with OMP_PROC_BIND = TRUE ...
+Configuring run time with GOMP_CPU_AFFINITY =  ...
+Configuring run time with KMP_AFFINITY =  ...
+Configuring with log extension = gnu ext4
+Configuring plot mode ...
+Configuring plot with figure width 16.0 ...
+Configuring plot with figure height 10.0 ...
+Configuring plot with font size 25 ...
+Configuring plot with legend font size 20 ...
+Configuring perf-top plot with minimum percentage 15 ...
+Configuring perf-top plot with exclude filter pthread PyInt_FromLong ...
+Configuring perf-report plot with minimum percentage 25 ...
+Configuring benchmark mode ...
+Configuring stream benchmark ...
+Configuring stream2 benchmark ...
+Configuring iozone benchmark ...
+Configuring IOR benchmark ...
+Configuring HPLinpack benchmark ...
+Configuring hydro benchmark ...
+Configuring NAS benchmark ...
+Configuring use case mode ...
+Configuring libpfm4 4.7.0 : https://sourceforge.net/projects/perfmon2/files/libpfm4/ ...
+Configuring perf-report with perf-list : cpu-clock page-faults
+Configuring perf-report with libpfm4 : 
+Configuring perf-top with perf-list : cpu-clock cache-misses
+Configuring perf-top with libpfm4 : ARITH:Umask-00 LONGEST_LAT_CACHE:MISS
+Configuring perf-stat for GFlops with perf-list : 
+Configuring perf-stat for GFlops with libpfm4 : ARITH:Umask-00
+Configuring perf-stat for cache misses with perf-list : cache-misses L1-dcache-load-misses
+Configuring perf-stat for cache misses with libpfm4 : LLC-LOAD-MISSES LLC-STORE-MISSES LLC-PREFETCH-MISSES
+
+Downloading ...
+Downloading stream ...
+Downloading http://www.cs.virginia.edu/stream/FTP/Code/Makefile : OK, no need to download
+Downloading http://www.cs.virginia.edu/stream/FTP/Code/mysecond.c : OK, no need to download
+Downloading http://www.cs.virginia.edu/stream/FTP/Code/stream.c : OK, no need to download
+Downloading http://www.cs.virginia.edu/stream/FTP/Code/stream.f : OK, no need to download
+Downloading http://www.cs.virginia.edu/stream/FTP/Code/HISTORY.txt : OK, no need to download
+Downloading http://www.cs.virginia.edu/stream/FTP/Code/LICENSE.txt : OK, no need to download
+Downloading stream2 ...
+Downloading http://www.cs.virginia.edu/stream/FTP/Code/mysecond.c : OK, no need to download
+Downloading http://www.cs.virginia.edu/stream/stream2/stream2.f : OK, no need to download
+Downloading iozone ...
+Downloading http://www.iozone.org/src/current/iozone3_457.tar : OK, no need to download
+Downloading IOR ...
+Downloading https://github.com/LLNL/ior.git : OK, no need to clone
+Downloading BLAS for HPLinpack ...
+Downloading http://www.netlib.org/blas/blas-3.6.0.tgz : OK, no need to download
+Downloading HPLinpack ...
+Downloading http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz : OK, no need to download
+Downloading Hydro ...
+Downloading https://github.com/HydroBench/Hydro.git : OK, no need to clone
+Downloading NAS ...
+Downloading http://www.nas.nasa.gov/assets/npb/NPB3.3.1.tar.gz : OK, no need to download
+
+MLK report:
+                          types |   # objects |   total size
+=============================== | =========== | ============
+                           list |        7088 |    725.57 KB
+                            str |        7171 |    417.53 KB
+                           dict |          20 |     21.97 KB
+                            int |         760 |     17.81 KB
+                        unicode |          74 |      7.68 KB
+              method_descriptor |          12 |    864     B
+             wrapper_descriptor |          10 |    800     B
+          <class 'pyc.plot.plot |           7 |    448     B
+  <class 'pyc.download.download |           7 |    448     B
+                        weakref |           4 |    352     B
+              member_descriptor |           4 |    288     B
+              getset_descriptor |           4 |    288     B
+                          float |           9 |    216     B
+                           file |           1 |    144     B
+                           code |           1 |    128     B
+
+Looking for compilers ...
+CC = /usr/bin/gcc
+FC = /usr/bin/gfortran
+MPICC = /usr/bin/mpicc
+MPIF77 = /usr/bin/mpif77
+MPIF90 = /usr/bin/mpif90
+MPIFC = /usr/bin/mpif90
+OMPFLAGS = -fopenmp
+FLAGS = -O3 -g -march=native -funroll-loops -ffast-math -ftree-vectorize -fopt-info-optall=gnu.txt -mcmodel=large -fopenmp
+NOOPTFLAGS = -O2 -march=native -mcmodel=large
+LINKFLAGS = -mcmodel=large -fopenmp
+
+Benchmarking stream ...
+Checking stream benchmark ... OK
+Building stream ... OK (time =       1.452 sec)
+Running stream ...
+Running stream.size=134217.n=1.t=1.gnu.ext4.less.quick.log ... OK (time =       0.015 sec)
+Running stream.size=134217.n=1.t=2.gnu.ext4.less.quick.log ... OK (time =       0.160 sec)
+Running stream.size=134217.n=1.t=4.gnu.ext4.less.quick.log ... OK (time =       0.439 sec)
+
+Benchmarking stream2 ...
+Checking stream2 benchmark ... OK
+Building stream2 ... OK (time =       0.225 sec)
+Running stream2 ...
+Running stream2.size=67108.n=1.t=1.gnu.ext4.less.quick.log ... OK (time =       0.064 sec)
+Running stream2.size=67108.n=1.t=2.gnu.ext4.less.quick.log ... OK (time =       0.075 sec)
+Running stream2.size=67108.n=1.t=4.gnu.ext4.less.quick.log ... OK (time =       0.070 sec)
+
+Benchmarking iozone ...
+Checking iozone benchmark ... OK
+Building iozone ... OK (time =       9.075 sec)
+Running iozone ...
+Running iozone.size=1048.MinSz=1048.MaxSz=1048.MinRec=1.MaxRec=128.n=1.t=1.gnu.ext4.less.quick.log ... OK (time =       2.108 sec)
+Running iozone.size=1048.MinSz=1048.MaxSz=1048.MinRec=1.MaxRec=128.n=1.t=2.gnu.ext4.less.quick.log ... OK (time =       1.900 sec)
+Running iozone.size=1048.MinSz=1048.MaxSz=1048.MinRec=1.MaxRec=128.n=1.t=4.gnu.ext4.less.quick.log ... OK (time =       1.917 sec)
+
+Benchmarking IOR ...
+Checking IOR benchmark ... OK
+Building IOR ... OK (time =       2.763 sec)
+Running IOR ...
+Running IOR.block=0008.transfer=0008.align=0004.a=POSIX.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.270 sec)
+Running IOR.block=0008.transfer=0008.align=0004.a=MPIIO.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.265 sec)
+Running IOR.block=0008.transfer=0008.align=0004.a=PHDF5.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.323 sec)
+Running IOR.block=0008.transfer=0008.align=0008.a=POSIX.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.291 sec)
+Running IOR.block=0008.transfer=0008.align=0008.a=MPIIO.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.276 sec)
+Running IOR.block=0008.transfer=0008.align=0008.a=PHDF5.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.306 sec)
+Running IOR.block=004k.transfer=001k.align=001k.a=POSIX.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.283 sec)
+Running IOR.block=004k.transfer=001k.align=001k.a=MPIIO.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.275 sec)
+Running IOR.block=004k.transfer=001k.align=001k.a=PHDF5.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.370 sec)
+Running IOR.block=004k.transfer=002k.align=001k.a=POSIX.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.288 sec)
+Running IOR.block=004k.transfer=002k.align=001k.a=MPIIO.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.311 sec)
+Running IOR.block=004k.transfer=002k.align=001k.a=PHDF5.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.406 sec)
+Running IOR.block=004k.transfer=002k.align=002k.a=POSIX.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.304 sec)
+Running IOR.block=004k.transfer=002k.align=002k.a=MPIIO.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.324 sec)
+Running IOR.block=004k.transfer=002k.align=002k.a=PHDF5.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.368 sec)
+Running IOR.block=004k.transfer=004k.align=002k.a=POSIX.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.311 sec)
+Running IOR.block=004k.transfer=004k.align=002k.a=MPIIO.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.275 sec)
+Running IOR.block=004k.transfer=004k.align=002k.a=PHDF5.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.321 sec)
+Running IOR.block=004k.transfer=004k.align=004k.a=POSIX.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.322 sec)
+Running IOR.block=004k.transfer=004k.align=004k.a=MPIIO.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.351 sec)
+Running IOR.block=004k.transfer=004k.align=004k.a=PHDF5.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.287 sec)
+Running IOR.block=0008.transfer=0008.align=0004.a=MPIIO.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.284 sec)
+Running IOR.block=0008.transfer=0008.align=0004.a=PHDF5.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.300 sec)
+Running IOR.block=0008.transfer=0008.align=0008.a=MPIIO.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.320 sec)
+Running IOR.block=0008.transfer=0008.align=0008.a=PHDF5.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.329 sec)
+Running IOR.block=004k.transfer=001k.align=001k.a=MPIIO.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.312 sec)
+Running IOR.block=004k.transfer=001k.align=001k.a=PHDF5.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.310 sec)
+Running IOR.block=004k.transfer=002k.align=001k.a=MPIIO.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.312 sec)
+Running IOR.block=004k.transfer=002k.align=001k.a=PHDF5.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.317 sec)
+Running IOR.block=004k.transfer=002k.align=002k.a=MPIIO.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.307 sec)
+Running IOR.block=004k.transfer=002k.align=002k.a=PHDF5.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.289 sec)
+Running IOR.block=004k.transfer=004k.align=002k.a=MPIIO.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.322 sec)
+Running IOR.block=004k.transfer=004k.align=002k.a=PHDF5.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.340 sec)
+Running IOR.block=004k.transfer=004k.align=004k.a=MPIIO.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.309 sec)
+Running IOR.block=004k.transfer=004k.align=004k.a=PHDF5.n=2.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.346 sec)
+Running IOR.block=0008.transfer=0008.align=0004.a=MPIIO.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.341 sec)
+Running IOR.block=0008.transfer=0008.align=0004.a=PHDF5.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.410 sec)
+Running IOR.block=0008.transfer=0008.align=0008.a=MPIIO.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.391 sec)
+Running IOR.block=0008.transfer=0008.align=0008.a=PHDF5.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.342 sec)
+Running IOR.block=004k.transfer=001k.align=001k.a=MPIIO.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.374 sec)
+Running IOR.block=004k.transfer=001k.align=001k.a=PHDF5.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.364 sec)
+Running IOR.block=004k.transfer=002k.align=001k.a=MPIIO.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.376 sec)
+Running IOR.block=004k.transfer=002k.align=001k.a=PHDF5.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.314 sec)
+Running IOR.block=004k.transfer=002k.align=002k.a=MPIIO.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.341 sec)
+Running IOR.block=004k.transfer=002k.align=002k.a=PHDF5.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.364 sec)
+Running IOR.block=004k.transfer=004k.align=002k.a=MPIIO.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.393 sec)
+Running IOR.block=004k.transfer=004k.align=002k.a=PHDF5.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.348 sec)
+Running IOR.block=004k.transfer=004k.align=004k.a=MPIIO.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.359 sec)
+Running IOR.block=004k.transfer=004k.align=004k.a=PHDF5.n=4.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.329 sec)
+
+Benchmarking HPLinpack ...
+Checking HPLinpack benchmark ... OK
+Building BLAS for HPLinpack ... OK (time =      50.267 sec)
+Building HPLinpack ... OK (time =      15.391 sec)
+Running HPLinpack ...
+Running HPL.size=366.div=0064.block=04.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.327 sec)
+Running HPL.size=366.div=0064.block=05.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.284 sec)
+Running HPL.size=366.div=0032.block=04.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.272 sec)
+Running HPL.size=366.div=0032.block=05.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.374 sec)
+Running HPL.size=366.div=0032.block=06.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.325 sec)
+Running HPL.size=366.div=0032.block=07.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.314 sec)
+Running HPL.size=366.div=0032.block=08.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.298 sec)
+Running HPL.size=366.div=0032.block=09.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.278 sec)
+Running HPL.size=366.div=0032.block=10.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.334 sec)
+Running HPL.size=366.div=0016.block=04.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.318 sec)
+Running HPL.size=366.div=0016.block=05.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.303 sec)
+Running HPL.size=366.div=0016.block=06.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.314 sec)
+Running HPL.size=366.div=0016.block=07.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.319 sec)
+Running HPL.size=366.div=0016.block=08.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.259 sec)
+Running HPL.size=366.div=0016.block=09.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.283 sec)
+Running HPL.size=366.div=0016.block=10.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.302 sec)
+Running HPL.size=366.div=0064.block=04.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.290 sec)
+Running HPL.size=366.div=0064.block=05.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.294 sec)
+Running HPL.size=366.div=0032.block=04.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.340 sec)
+Running HPL.size=366.div=0032.block=05.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.384 sec)
+Running HPL.size=366.div=0032.block=06.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.318 sec)
+Running HPL.size=366.div=0032.block=07.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.282 sec)
+Running HPL.size=366.div=0032.block=08.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.284 sec)
+Running HPL.size=366.div=0032.block=09.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.291 sec)
+Running HPL.size=366.div=0032.block=10.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.332 sec)
+Running HPL.size=366.div=0016.block=04.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.314 sec)
+Running HPL.size=366.div=0016.block=05.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.326 sec)
+Running HPL.size=366.div=0016.block=06.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.332 sec)
+Running HPL.size=366.div=0016.block=07.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.301 sec)
+Running HPL.size=366.div=0016.block=08.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.286 sec)
+Running HPL.size=366.div=0016.block=09.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.323 sec)
+Running HPL.size=366.div=0016.block=10.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.338 sec)
+Running HPL.size=366.div=0064.block=04.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.324 sec)
+Running HPL.size=366.div=0064.block=05.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.280 sec)
+Running HPL.size=366.div=0032.block=04.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.349 sec)
+Running HPL.size=366.div=0032.block=05.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.334 sec)
+Running HPL.size=366.div=0032.block=06.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.308 sec)
+Running HPL.size=366.div=0032.block=07.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.310 sec)
+Running HPL.size=366.div=0032.block=08.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.287 sec)
+Running HPL.size=366.div=0032.block=09.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.369 sec)
+Running HPL.size=366.div=0032.block=10.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.314 sec)
+Running HPL.size=366.div=0016.block=04.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.360 sec)
+Running HPL.size=366.div=0016.block=05.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.291 sec)
+Running HPL.size=366.div=0016.block=06.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.257 sec)
+Running HPL.size=366.div=0016.block=07.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.262 sec)
+Running HPL.size=366.div=0016.block=08.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.264 sec)
+Running HPL.size=366.div=0016.block=09.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.241 sec)
+Running HPL.size=366.div=0016.block=10.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.257 sec)
+Running HPL.size=366.div=0064.block=04.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.850 sec)
+Running HPL.size=366.div=0064.block=05.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.832 sec)
+Running HPL.size=366.div=0032.block=04.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.902 sec)
+Running HPL.size=366.div=0032.block=05.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.939 sec)
+Running HPL.size=366.div=0032.block=06.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.998 sec)
+Running HPL.size=366.div=0032.block=07.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.991 sec)
+Running HPL.size=366.div=0032.block=08.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.984 sec)
+Running HPL.size=366.div=0032.block=09.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.967 sec)
+Running HPL.size=366.div=0032.block=10.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.996 sec)
+Running HPL.size=366.div=0016.block=04.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.029 sec)
+Running HPL.size=366.div=0016.block=05.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.055 sec)
+Running HPL.size=366.div=0016.block=06.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.102 sec)
+Running HPL.size=366.div=0016.block=07.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.114 sec)
+Running HPL.size=366.div=0016.block=08.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.166 sec)
+Running HPL.size=366.div=0016.block=09.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.195 sec)
+Running HPL.size=366.div=0016.block=10.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.196 sec)
+Running HPL.size=366.div=0064.block=04.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.808 sec)
+Running HPL.size=366.div=0064.block=05.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.846 sec)
+Running HPL.size=366.div=0032.block=04.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.933 sec)
+Running HPL.size=366.div=0032.block=05.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.937 sec)
+Running HPL.size=366.div=0032.block=06.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.013 sec)
+Running HPL.size=366.div=0032.block=07.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.010 sec)
+Running HPL.size=366.div=0032.block=08.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.992 sec)
+Running HPL.size=366.div=0032.block=09.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.995 sec)
+Running HPL.size=366.div=0032.block=10.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.040 sec)
+Running HPL.size=366.div=0016.block=04.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.057 sec)
+Running HPL.size=366.div=0016.block=05.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.075 sec)
+Running HPL.size=366.div=0016.block=06.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.113 sec)
+Running HPL.size=366.div=0016.block=07.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.111 sec)
+Running HPL.size=366.div=0016.block=08.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.193 sec)
+Running HPL.size=366.div=0016.block=09.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.224 sec)
+Running HPL.size=366.div=0016.block=10.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.187 sec)
+Running HPL.size=366.div=0064.block=04.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.414 sec)
+Running HPL.size=366.div=0064.block=05.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.409 sec)
+Running HPL.size=366.div=0032.block=04.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.409 sec)
+Running HPL.size=366.div=0032.block=05.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.411 sec)
+Running HPL.size=366.div=0032.block=06.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.411 sec)
+Running HPL.size=366.div=0032.block=07.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.403 sec)
+Running HPL.size=366.div=0032.block=08.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.396 sec)
+Running HPL.size=366.div=0032.block=09.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.411 sec)
+Running HPL.size=366.div=0032.block=10.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.419 sec)
+Running HPL.size=366.div=0016.block=04.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.419 sec)
+Running HPL.size=366.div=0016.block=05.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.395 sec)
+Running HPL.size=366.div=0016.block=06.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.434 sec)
+Running HPL.size=366.div=0016.block=07.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.397 sec)
+Running HPL.size=366.div=0016.block=08.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.367 sec)
+Running HPL.size=366.div=0016.block=09.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.368 sec)
+Running HPL.size=366.div=0016.block=10.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.414 sec)
+
+Benchmarking Hydro ...
+Checking Hydro benchmark ... OK
+Building Hydro : HydroC99_2DMpi ... OK (time =       4.364 sec)
+Running Hydro ...
+Running Hydro.impl=HydroC99_2DMpi.nxy=100.nxystep=050.n=1.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.909 sec)
+Running Hydro.impl=HydroC99_2DMpi.nxy=100.nxystep=050.n=1.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =      20.404 sec)
+Running Hydro.impl=HydroC99_2DMpi.nxy=100.nxystep=050.n=1.t=4.openmpi.gnu.ext4.less.quick.log ... OK (time =       0.912 sec)
+Running Hydro.impl=HydroC99_2DMpi.nxy=100.nxystep=050.n=2.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =      17.188 sec)
+Running Hydro.impl=HydroC99_2DMpi.nxy=100.nxystep=050.n=2.t=2.openmpi.gnu.ext4.less.quick.log ... OK (time =      47.575 sec)
+Running Hydro.impl=HydroC99_2DMpi.nxy=100.nxystep=050.n=4.t=1.openmpi.gnu.ext4.less.quick.log ... OK (time =       1.084 sec)
+
+Benchmarking NAS ...
+Checking NAS benchmark ... OK
+Building NAS ...
+Building NAS : NPB3.3-MPI ... OK (time =     102.692 sec)
+Building NAS : NPB3.3-OMP ... OK (time =      25.220 sec)
+Building NAS : NPB3.3-SER ... OK (time =      24.828 sec)
+Running NAS ...
+Running NAS.impl=NPB3-3-MPI.bench=bt.class=S.n=1.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.386 sec)
+Running NAS.impl=NPB3-3-OMP.bench=bt.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.087 sec)
+Running NAS.impl=NPB3-3-SER.bench=bt.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.070 sec)
+Running NAS.impl=NPB3-3-MPI.bench=cg.class=S.n=1.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.324 sec)
+Running NAS.impl=NPB3-3-OMP.bench=cg.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.060 sec)
+Running NAS.impl=NPB3-3-SER.bench=cg.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.055 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ep.class=S.n=1.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       1.897 sec)
+Running NAS.impl=NPB3-3-OMP.bench=ep.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       1.651 sec)
+Running NAS.impl=NPB3-3-SER.bench=ep.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       1.643 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ft.class=S.n=1.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.375 sec)
+Running NAS.impl=NPB3-3-OMP.bench=ft.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.146 sec)
+Running NAS.impl=NPB3-3-SER.bench=ft.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.116 sec)
+Running NAS.impl=NPB3-3-MPI.bench=is.class=S.n=1.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.250 sec)
+Running NAS.impl=NPB3-3-OMP.bench=is.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.017 sec)
+Running NAS.impl=NPB3-3-SER.bench=is.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.016 sec)
+Running NAS.impl=NPB3-3-MPI.bench=lu.class=S.n=1.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.273 sec)
+Running NAS.impl=NPB3-3-OMP.bench=lu.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.039 sec)
+Running NAS.impl=NPB3-3-SER.bench=lu.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.037 sec)
+Running NAS.impl=NPB3-3-MPI.bench=mg.class=S.n=1.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.266 sec)
+Running NAS.impl=NPB3-3-OMP.bench=mg.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.017 sec)
+Running NAS.impl=NPB3-3-SER.bench=mg.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.018 sec)
+Running NAS.impl=NPB3-3-OMP.bench=ua.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.605 sec)
+Running NAS.impl=NPB3-3-SER.bench=ua.class=S.n=1.t=1.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.593 sec)
+Running NAS.impl=NPB3-3-MPI.bench=bt.class=S.n=1.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       0.411 sec)
+Running NAS.impl=NPB3-3-OMP.bench=bt.class=S.n=1.t=2.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.086 sec)
+Running NAS.impl=NPB3-3-MPI.bench=cg.class=S.n=1.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       0.314 sec)
+Running NAS.impl=NPB3-3-OMP.bench=cg.class=S.n=1.t=2.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.056 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ep.class=S.n=1.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       1.889 sec)
+Running NAS.impl=NPB3-3-OMP.bench=ep.class=S.n=1.t=2.xxxxxxx.seq.gnu.ext4.log ... OK (time =       1.651 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ft.class=S.n=1.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       0.463 sec)
+Running NAS.impl=NPB3-3-OMP.bench=ft.class=S.n=1.t=2.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.149 sec)
+Running NAS.impl=NPB3-3-MPI.bench=is.class=S.n=1.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       0.289 sec)
+Running NAS.impl=NPB3-3-OMP.bench=is.class=S.n=1.t=2.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.021 sec)
+Running NAS.impl=NPB3-3-MPI.bench=lu.class=S.n=1.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       0.300 sec)
+Running NAS.impl=NPB3-3-OMP.bench=lu.class=S.n=1.t=2.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.052 sec)
+Running NAS.impl=NPB3-3-MPI.bench=mg.class=S.n=1.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       0.336 sec)
+Running NAS.impl=NPB3-3-OMP.bench=mg.class=S.n=1.t=2.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.009 sec)
+Running NAS.impl=NPB3-3-OMP.bench=ua.class=S.n=1.t=2.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.576 sec)
+Running NAS.impl=NPB3-3-MPI.bench=bt.class=S.n=1.t=4.openmpi.mpi.gnu.ext4.log ... OK (time =       0.314 sec)
+Running NAS.impl=NPB3-3-OMP.bench=bt.class=S.n=1.t=4.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.068 sec)
+Running NAS.impl=NPB3-3-MPI.bench=cg.class=S.n=1.t=4.openmpi.mpi.gnu.ext4.log ... OK (time =       0.281 sec)
+Running NAS.impl=NPB3-3-OMP.bench=cg.class=S.n=1.t=4.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.055 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ep.class=S.n=1.t=4.openmpi.mpi.gnu.ext4.log ... OK (time =       1.869 sec)
+Running NAS.impl=NPB3-3-OMP.bench=ep.class=S.n=1.t=4.xxxxxxx.seq.gnu.ext4.log ... OK (time =       1.640 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ft.class=S.n=1.t=4.openmpi.mpi.gnu.ext4.log ... OK (time =       0.386 sec)
+Running NAS.impl=NPB3-3-OMP.bench=ft.class=S.n=1.t=4.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.146 sec)
+Running NAS.impl=NPB3-3-MPI.bench=is.class=S.n=1.t=4.openmpi.mpi.gnu.ext4.log ... OK (time =       0.271 sec)
+Running NAS.impl=NPB3-3-OMP.bench=is.class=S.n=1.t=4.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.026 sec)
+Running NAS.impl=NPB3-3-MPI.bench=lu.class=S.n=1.t=4.openmpi.mpi.gnu.ext4.log ... OK (time =       0.318 sec)
+Running NAS.impl=NPB3-3-OMP.bench=lu.class=S.n=1.t=4.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.046 sec)
+Running NAS.impl=NPB3-3-MPI.bench=mg.class=S.n=1.t=4.openmpi.mpi.gnu.ext4.log ... OK (time =       0.249 sec)
+Running NAS.impl=NPB3-3-OMP.bench=mg.class=S.n=1.t=4.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.011 sec)
+Running NAS.impl=NPB3-3-OMP.bench=ua.class=S.n=1.t=4.xxxxxxx.seq.gnu.ext4.log ... OK (time =       0.578 sec)
+Running NAS.impl=NPB3-3-MPI.bench=cg.class=S.n=2.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =      30.277 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ep.class=S.n=2.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       2.077 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ft.class=S.n=2.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       2.804 sec)
+Running NAS.impl=NPB3-3-MPI.bench=is.class=S.n=2.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       1.177 sec)
+Running NAS.impl=NPB3-3-MPI.bench=lu.class=S.n=2.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       5.549 sec)
+Running NAS.impl=NPB3-3-MPI.bench=mg.class=S.n=2.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       3.894 sec)
+Running NAS.impl=NPB3-3-MPI.bench=cg.class=S.n=2.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =      30.289 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ep.class=S.n=2.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       2.067 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ft.class=S.n=2.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       2.764 sec)
+Running NAS.impl=NPB3-3-MPI.bench=is.class=S.n=2.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       1.125 sec)
+Running NAS.impl=NPB3-3-MPI.bench=lu.class=S.n=2.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       5.520 sec)
+Running NAS.impl=NPB3-3-MPI.bench=mg.class=S.n=2.t=2.openmpi.mpi.gnu.ext4.log ... OK (time =       3.892 sec)
+Running NAS.impl=NPB3-3-MPI.bench=bt.class=S.n=4.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.492 sec)
+Running NAS.impl=NPB3-3-MPI.bench=cg.class=S.n=4.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.488 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ep.class=S.n=4.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       2.033 sec)
+Running NAS.impl=NPB3-3-MPI.bench=ft.class=S.n=4.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.575 sec)
+Running NAS.impl=NPB3-3-MPI.bench=is.class=S.n=4.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.398 sec)
+Running NAS.impl=NPB3-3-MPI.bench=lu.class=S.n=4.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.488 sec)
+Running NAS.impl=NPB3-3-MPI.bench=mg.class=S.n=4.t=1.openmpi.mpi.gnu.ext4.log ... OK (time =       0.420 sec)
+
+Analysing benchmark logs ...
+Analysing    stream: maximum =   26569.800    MB/s, stream.size=134217.n=1.t=1.gnu.ext4.less.quick.log
+                                                    N = 134217, step = Copy
+Analysing   stream2: maximum =   48945.700    MB/s, stream2.size=67108.n=1.t=1.gnu.ext4.less.quick.log
+                                                    N = 220, step = DOT
+Analysing    iozone: maximum =    4165.951    MB/s, iozone.size=1048.MinSz=1048.MaxSz=1048.MinRec=1.MaxRec=128.n=1.t=4.gnu.ext4.less.quick.log
+                                                    file size = 1 MB, record size = 64 kB, step = reread
+Analysing       IOR: maximum =     454.100    MB/s, IOR.block=004k.transfer=002k.align=002k.a=POSIX.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log
+                                                    block size = 004k, transfer size = 002k, step = n=1
+Analysing HPLinpack: maximum =       0.193 GFlop/s, HPL.size=366.div=0016.block=08.n=1.t=2.openmpi.gnu.ext4.less.quick.log
+                                                    N = 22, NB = 2
+Analysing     Hydro: maximum =       3.056 GFlop/s, Hydro.impl=HydroC99_2DMpi.nxy=100.nxystep=050.n=4.t=1.openmpi.gnu.ext4.less.quick.log
+                                                    nxy = 50, nxystep = 50
+Analysing       NAS: maximum =       3.761 GFlop/s, NAS.impl=NPB3-3-OMP.bench=bt.class=S.n=1.t=4.xxxxxxx.seq.gnu.ext4.log
+
+Total time =     554.179 sec
+
+MLK report:
+    types |   # objects |   total size
+========= | =========== | ============
+      str |          89 |      5.15 KB
+     list |          17 |      2.44 KB
+  unicode |          12 |      1.24 KB
+      int |           4 |     96     B
+

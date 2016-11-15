@@ -1,0 +1,86 @@
+language: python
+
+python:
+
+  - "2.7"
+
+  - "3.4"
+
+notifications:
+
+  email:
+
+    on_success: always
+
+    on_failure: never
+
+dist: trusty
+
+os: linux
+
+virtualenv:
+
+  # system_site_packages is needed for pip to be allowed to install packages in the system
+  system_site_packages: true
+
+install:
+
+  # remove packages which break the upgrade
+  - sudo apt-get remove mysql-client*
+  - sudo apt-get remove postgresql*
+
+  # install all what is needed
+  - sudo apt-get update
+  - if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]]; then sudo apt-get install python-minimal python-argparse python-matplotlib python-numpy python-psutil; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.4 ]]; then sudo apt-get install python3-minimal python-argparse python3-matplotlib python3-numpy python3-psutil; fi
+  - sudo apt-get install linux-tools-generic g++ gcc gfortran openmpi-bin libopenmpi-dev
+  - sudo apt-get install wget binutils grep coreutils findutils inetutils-ping
+  - sudo apt-get install libblas-dev libnuma1 libnuma-dev autoconf automake libhdf5-openmpi-*
+
+  # allow "not paranoid" mode (to use perf tools)
+  - sudo sh -c "echo -1 > /proc/sys/kernel/perf_event_paranoid"
+
+  # upgrade as the software versions are outdated (trusty)
+  - sudo apt-get remove oracle-java*
+  - sudo apt-get -y -o Dpkg::Options::="--force-confdef" upgrade
+  - sudo apt-get -y -o Dpkg::Options::="--force-confdef" dist-upgrade
+
+  # still outdated versions : install newest versions
+  - if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]]; then sudo apt-get install python-pip; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]]; then sudo pip install pylint==1.5.6; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]]; then sudo pip install psutil==4.3.1; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.4 ]]; then sudo apt-get install python3-pip; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.4 ]]; then sudo pip3 install pylint==1.5.6; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.4 ]]; then sudo pip3 install psutil==4.3.1; fi
+  - sudo apt-get install linux-tools-3.19.0-66-generic
+
+  # coverage
+  - if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]]; then sudo pip install coverage codecov; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.4 ]]; then sudo pip3 install coverage codecov; fi
+
+  # memory leak
+  - if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]]; then sudo pip install pympler; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.4 ]]; then sudo pip3 install pympler; fi
+
+before_script:
+
+  # start X server to enable matplotlib to create png
+  - export DISPLAY=":99.0"
+  - sh -e /etc/init.d/xvfb start
+
+script:
+
+  # unbuffer to avoid TravisCI time out when no output, launch validation with coverage and MLK tracking
+  - export PYTHONUNBUFFERED="YES"
+  # run validation
+  - export PYTHONPATH=$PYTHONPATH:$(pwd)
+  - ./dev/perfAppValidation.sh ubuntu14.iXeon
+
+after_success:
+
+  # list events to know about what is available
+  - cat ./tmp/libpfm-4.7.0/examples/showevtinfo.log
+  # generate coverage report
+  - coverage combine --append
+  - codecov
+  - bash <(curl -s https://codecov.io/bash)

@@ -1,2 +1,5 @@
 py*/*.pyc
 py*/__pycache__
+dev/perfAppCodeQuality.log
+tmp*
+.coverage*

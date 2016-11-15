@@ -1,0 +1,26 @@
+Run the test suite this way:
+perfApp>./dev/perfAppValidation.sh debian.i7-3687U (if you run debian with an i7)
+
+Open source contributions are welcomed:
+1. Contact me by mail (fghoussen@gmail.com): let's agree on the why and specify the how.
+2. Respect code quality/rules (use ./dev/perfAppCodeQuality.sh to maintain clean code base).
+3. Validate your modifications before committing with ./dev/perfAppValidation.sh XXX. If the
+   json for your OS (XXX) does not yet exists, create it :
+   3.1. Find a set of json parameters that mimic the existing ones (otherwise, this would break
+        the whole test suite). From ./tmp/libpfm-*/examples/showevtinfo.log, this reduces mainly
+        to find a "good" set of events that mimic the ones from the existing json files (tune
+        PERFLIST and LIBPFM4 json keywords).
+   3.2. Replace paths (MPI, HDF5, ...) with the relevant ones.
+4. Do not code or commit on master: this branch is dedicated to reliable developments.
+   4.1. Use your own branch to code, commit and pull: rebase it on master.
+        If needed (*), reset hard master before rebasing (extra commits of) your branch on it:
+        git checkout myDev; git rebase --onto master lastMaster myDev
+   4.2. For files in pyc/pyf/usc/dev, name your commits like "pyc: ...", "pyf: ...", "usc: ...",
+        "dev: ..." or "main: ..." : this will help maintainers to keep a clean history (commits
+        may be fixed up in existing commits when rebasing master).
+
+Franck
+
+(*): To get a clean (readable, maintainable) history, maintainers may change master's history.
+     In this case, you'll need to fetch master (from github) and reset hard on it:
+     git fetch origin master; git checkout master; git reset --hard origin/master

@@ -1,0 +1,133 @@
+{
+    "ARCHITECTURE" : {
+        "CACHE_LINE_SIZE_IN_BYTES" : "64",
+        "NB_FLOP_PER_PACKED_SIMD" : "2",
+        "NB_FLOP_PER_PACKED_SSE" : "2"
+    },
+    "BUILDTIME" : {
+        "CC" : "",
+        "FC" : "",
+        "MPICC" : "",
+        "MPIF77" : "",
+        "MPIF90" : "",
+        "OMPFLAGS" : "-fopenmp",
+        "FLAGS" : "",
+        "NOOPTFLAGS" : "",
+        "LINKFLAGS" : ""
+    },
+    "RUNTIME" : {
+        "MPIRUN_OPT" : "--map-by core --allow-run-as-root",
+        "OMP_PROC_BIND" : "TRUE",
+        "GOMP_CPU_AFFINITY" : "",
+        "KMP_AFFINITY" : "",
+        "LOGID" : "gnu ext4"
+    },
+    "BENCH" : {
+        "STREAM" : {
+            "URL" : "http://www.cs.virginia.edu/stream/FTP/Code/"
+        },
+        "STREAM2" : {
+            "PREREQ" : "http://www.cs.virginia.edu/stream/FTP/Code/",
+            "URL" : "http://www.cs.virginia.edu/stream/stream2/"
+        },
+        "IOZONE" : {
+            "URL" : "http://www.iozone.org/src/current/",
+            "VERSION" : "3_457",
+            "MKARCH" : "linux"
+        },
+        "IOR" : {
+            "URL" : "https://github.com/LLNL/ior.git",
+            "CONFIGURE" : {
+                "OPTIONS" : "--with-posix --with-mpiio --with-hdf5",
+                "CFLAGS" : "-O3 -g -march=native -I/usr/lib/openmpi/include -I/usr/include/hdf5/openmpi",
+                "LDFLAGS" : "-L/usr/lib/openmpi/lib -L/usr/lib/x86_64-linux-gnu/hdf5/openmpi",
+                "LIBS" : "-lmpi -lhdf5"
+            },
+            "RUN" : {
+                "-a" : "POSIX MPIIO HDF5",
+                "-b" : "8 8 4k 4k 4k 4k 4k",
+                "-t" : "8 8 1k 2k 2k 4k 4k",
+                "-J" : "4 8 1k 1k 2k 2k 4k",
+                "OTHER" : "-i 2"
+            },
+            "LOGID" : "openmpi"
+        },
+        "HPLINPACK" : {
+            "BLAS" : {
+                "BUILDBLAS" : {
+                    "URL" : "http://www.netlib.org/blas/",
+                    "VERSION" : "3.6.0"
+                },
+                "USEBLAS" : {
+                    "LIBBLAS" : ""
+                }
+            },
+            "URL" : "http://www.netlib.org/benchmark/hpl/",
+            "VERSION" : "2.2",
+            "LOGID" : "netlib-blas openmpi"
+        },
+        "HYDRO" : {
+            "URL" : "https://github.com/HydroBench/Hydro.git",
+            "CFLAGS_MPI" : "-I/usr/lib/openmpi/include",
+            "LDFLAGS_MPI" : "-L/usr/lib/openmpi/lib -lmpi",
+            "LIBNUMA" : "/usr/lib/x86_64-linux-gnu/libnuma.so",
+            "NXY"     : "100 250",
+            "NXYSTEP" : " 50 125",
+            "TEND"    : "250",
+            "LOGID" : "openmpi"
+        },
+        "NAS" : {
+            "URL" : "http://www.nas.nasa.gov/assets/npb/",
+            "VERSION" : "3.3.1",
+            "MPIID" : "openmpi"
+        }
+    },
+    "UCASE" : {
+        "LIBPFM4" : {
+            "URL" : "https://sourceforge.net/projects/perfmon2/files/libpfm4/",
+            "VERSION" : "4.7.0"
+        },
+        "PERF-STAT" : {
+            "GFLOPS" : {
+               "PERFLIST" : "",
+               "LIBPFM4" : "ARITH:Umask-00"
+            },
+            "CACHEMISSES" : {
+               "PERFLIST" : "cache-misses L1-dcache-load-misses",
+               "LIBPFM4" : "LLC-LOAD-MISSES LLC-STORE-MISSES LLC-PREFETCH-MISSES"
+            }
+        },
+        "PERF-REPORT" : {
+            "PERFLIST" : "cpu-clock page-faults",
+            "LIBPFM4" : ""
+        },
+        "PERF-TOP" : {
+            "PERFLIST" : "cpu-clock cache-misses",
+            "LIBPFM4" : "ARITH:Umask-00 LONGEST_LAT_CACHE:MISS"
+        },
+        "OBJDUMP" : "addpd mulpd"
+    },
+    "PLOT" : {
+        "FIGWIDTH" : "16.0",
+        "FIGHEIGHT" : "10.0",
+        "DPI" : "0",
+        "FONTSIZE" : "25",
+        "LEGENDFONTSIZE" : "20",
+        "RLM" : {
+            "XMIN" : "",
+            "XMAX" : "",
+            "YMAX" : "",
+            "ANNOTATIONFONTSIZE" : ""
+        },
+        "PERF-TOP" : {
+            "MINPERCENTAGE" : "15",
+            "EXCLUDE" : "pthread PyInt_FromLong"
+        },
+        "PERF-REPORT" : {
+            "MINPERCENTAGE" : "25",
+            "EXCLUDE" : ""
+        },
+        "LOGID_INCLUDE" : "",
+        "LOGID_EXCLUDE" : ""
+    }
+}

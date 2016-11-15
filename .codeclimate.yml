@@ -1,0 +1,21 @@
+engines:
+
+  pep8:
+
+    enabled: true
+
+  pylint:
+
+    enabled: true
+
+ratings:
+
+  paths:
+
+    - "*.py"
+
+    - "py*/*.py"
+
+    - "usc/*/*.py"
+
+exclude_paths: []

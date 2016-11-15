@@ -1,0 +1,327 @@
+Configuring ...
+Configuring using file : ./dev/debian.i7-3687U.less.json ...
+Configuring architecture features ...
+Configuring cache line size with 64 ...
+Configuring flop per packed SIMD with 2 ...
+Configuring flop per packed SSE with 2 ...
+Configuring build time ...
+Configuring CC with gcc ...
+Configuring FC with gfortran ...
+Configuring MPICC with mpicc ...
+Configuring MPIF77 with mpif77 ...
+Configuring MPIF90 with mpif90 ...
+Configuring OMPFLAGS with -fopenmp ...
+Configuring FLAGS with -O3 -funroll-loops -ffast-math -ftree-vectorize -fopt-info-optall=gnu.txt ...
+Configuring NOOPTFLAGS with -O2 -mcmodel=large ...
+Configuring run time ...
+Configuring run time with MPIRUN_OPT = --allow-run-as-root ...
+Configuring run time with OMP_PROC_BIND =  ...
+Configuring run time with GOMP_CPU_AFFINITY = 0 1 2 3 ...
+Configuring run time with KMP_AFFINITY =  ...
+Configuring with log extension = 
+Configuring plot mode ...
+Configuring plot with figure width 16.0 ...
+Configuring plot with figure height 10.0 ...
+Configuring plot with dpi 10 ...
+Configuring plot with font size 25 ...
+Configuring plot with legend font size 25 ...
+Configuring roof line model with xmin 0 ...
+Configuring roof line model with xmax 1 ...
+Configuring roof line model with ymax 9 ...
+Configuring roof line model with annotation font size 15 ...
+Configuring perf-report plot with minimum percentage 25 ...
+Configuring plot with include log filter gnu ...
+Configuring plot with exclude log filter vec ...
+Configuring benchmark mode ...
+Configuring stream benchmark ...
+Configuring stream2 benchmark ...
+Configuring iozone benchmark ...
+Configuring IOR benchmark ...
+Configuring HPLinpack benchmark ...
+Configuring hydro benchmark ...
+Configuring NAS benchmark ...
+Configuring use case mode ...
+Configuring libpfm4 4.7.0 : https://sourceforge.net/projects/perfmon2/files/libpfm4/ ...
+Configuring perf-report with perf-list : cpu-clock
+Configuring perf-report with libpfm4 : 
+Configuring perf-top with perf-list : cpu-clock
+Configuring perf-top with libpfm4 : ARITH:Umask-00
+Configuring perf-stat for GFlops with perf-list : 
+Configuring perf-stat for GFlops with libpfm4 : ARITH:Umask-00
+Configuring perf-stat for cache misses with perf-list : cache-misses
+Configuring perf-stat for cache misses with libpfm4 : LLC-LOAD-MISSES
+
+Downloading ...
+Downloading libpfm4 ...
+Downloading https://sourceforge.net/projects/perfmon2/files/libpfm4/libpfm-4.7.0.tar.gz : OK, no need to download
+
+MLK report:
+                          types |   # objects |   total size
+=============================== | =========== | ============
+                           list |        7097 |    726.04 KB
+                            str |        7175 |    417.71 KB
+                           dict |          22 |     24.02 KB
+                            int |         760 |     17.81 KB
+                        unicode |          69 |      7.29 KB
+              method_descriptor |          12 |    864     B
+             wrapper_descriptor |          10 |    800     B
+          <class 'pyc.plot.plot |           8 |    512     B
+  <class 'pyc.download.download |           8 |    512     B
+                        weakref |           4 |    352     B
+              member_descriptor |           4 |    288     B
+              getset_descriptor |           4 |    288     B
+                          float |          11 |    264     B
+                           file |           1 |    144     B
+                           code |           1 |    128     B
+
+Searching for registers with libpfm4 ...
+Building libpfm4 ... OK (time =       0.065 sec)
+Running libpfm4 ...
+Register r530114 is mapped to ARITH:0x01
+Register r10002 is mapped to LLC-LOAD-MISSES:none
+
+Configuring pfaComputeBounded with LOGID = mpic++
+Configuring pfaComputeBounded with EXE = ./pfaFlopsCacheMisses.exe
+Configuring pfaComputeBounded with ARG = 15 1 1 500
+Configuring pfaComputeBounded with MPI = 1 1 2 2
+Configuring pfaComputeBounded with THD = 1 2 1 2
+Configuring pfaComputeBounded with COLOR = r g b c
+Configuring pfaComputeBounded with MARKER = x x x x
+Configuring pfaComputeBounded with LABEL = compute bounded
+
+Plotting pfaComputeBounded use case ...
+Plotting pfaComputeBounded.perf-report ...
+Analysing pfaComputeBounded perf-top history for n = 1 and for t = 1 ...
+Analysing pfaComputeBounded perf-top history for n = 1 and for t = 1 and for r530114:u ... OK
+Plotting pfaComputeBounded.perf-top.r530114:u.n=1.t=1 ...
+Analysing pfaComputeBounded perf-top history for n = 1 and for t = 1 and for cpu-clock:u ... OK
+  - For cpu-clock:u, 2 empty perf-top log(s) (increase top slot)
+Plotting pfaComputeBounded.perf-top.cpu-clock:u.n=1.t=1 ...
+Analysing pfaComputeBounded memory history for n = 1 and for t = 1 ... OK
+  - log found pfaComputeBounded.mem.n=1.t=1.log
+  - PID 9548,  vms : min     207.594, max     487.422
+  - PID 9548,  rss : min      49.121, max      51.703
+  - PID 9548,  uss : min      42.867, max      43.668
+  - PID 9548, swap : min       0.000, max       0.000
+Plotting pfaComputeBounded.memory.n=1.t=1 ...
+Analysing pfaComputeBounded cpu usage history for n = 1 and for t = 1 ... OK
+  - log found pfaComputeBounded.cpu.n=1.t=1.log
+  - PID 9548,  cpu : min       0.000, max       0.000
+Plotting pfaComputeBounded.cpu.n=1.t=1 ...
+Analysing pfaComputeBounded perf-top history for n = 1 and for t = 2 ...
+Analysing pfaComputeBounded perf-top history for n = 1 and for t = 2 and for r530114:u ... OK
+  - For r530114:u, 2 empty perf-top log(s) (increase top slot)
+Plotting pfaComputeBounded.perf-top.r530114:u.n=1.t=2 ...
+Analysing pfaComputeBounded perf-top history for n = 1 and for t = 2 and for cpu-clock:u ... OK
+  - For cpu-clock:u, 2 empty perf-top log(s) (increase top slot)
+Plotting pfaComputeBounded.perf-top.cpu-clock:u.n=1.t=2 ...
+Analysing pfaComputeBounded memory history for n = 1 and for t = 2 ... OK
+  - log found pfaComputeBounded.mem.n=1.t=2.log
+  - PID 9825,  vms : min     314.273, max    1346.215
+  - PID 9825,  rss : min      11.527, max    1040.082
+  - PID 9825,  uss : min       3.883, max    1032.555
+  - PID 9825, swap : min       0.000, max       0.000
+Plotting pfaComputeBounded.memory.n=1.t=2 ...
+Analysing pfaComputeBounded cpu usage history for n = 1 and for t = 2 ... OK
+  - log found pfaComputeBounded.cpu.n=1.t=2.log
+  - PID 9825,  cpu : min       0.000, max     100.000
+Plotting pfaComputeBounded.cpu.n=1.t=2 ...
+Analysing pfaComputeBounded perf-top history for n = 2 and for t = 1 ...
+Analysing pfaComputeBounded perf-top history for n = 2 and for t = 1 and for r530114:u ... OK
+  - For r530114:u, 4 empty perf-top log(s) (increase top slot)
+Plotting pfaComputeBounded.perf-top.r530114:u.n=2.t=1 ...
+Analysing pfaComputeBounded perf-top history for n = 2 and for t = 1 and for cpu-clock:u ... OK
+  - For cpu-clock:u, 4 empty perf-top log(s) (increase top slot)
+Plotting pfaComputeBounded.perf-top.cpu-clock:u.n=2.t=1 ...
+Analysing pfaComputeBounded memory history for n = 2 and for t = 1 ... OK
+  - log found pfaComputeBounded.mem.n=2.t=1.log
+  - PID 9898,  vms : min     458.035, max    1486.297
+  - PID 9898,  rss : min      12.625, max    1040.727
+  - PID 9898,  uss : min       3.109, max    1031.375
+  - PID 9898, swap : min       0.000, max       0.000
+  - PID 9899,  vms : min     458.035, max    1486.297
+  - PID 9899,  rss : min      12.625, max    1040.727
+  - PID 9899,  uss : min       3.109, max    1031.375
+  - PID 9899, swap : min       0.000, max       0.000
+Plotting pfaComputeBounded.memory.n=2.t=1 ...
+Analysing pfaComputeBounded cpu usage history for n = 2 and for t = 1 ... OK
+  - log found pfaComputeBounded.cpu.n=2.t=1.log
+  - PID 9898,  cpu : min       0.000, max     100.000
+  - PID 9899,  cpu : min       0.000, max     100.000
+Plotting pfaComputeBounded.cpu.n=2.t=1 ...
+Analysing pfaComputeBounded perf-top history for n = 2 and for t = 2 ...
+Analysing pfaComputeBounded perf-top history for n = 2 and for t = 2 and for r530114:u ... OK
+  - For r530114:u, 5 empty perf-top log(s) (increase top slot)
+Plotting pfaComputeBounded.perf-top.r530114:u.n=2.t=2 ...
+Analysing pfaComputeBounded perf-top history for n = 2 and for t = 2 and for cpu-clock:u ... OK
+  - For cpu-clock:u, 2 empty perf-top log(s) (increase top slot)
+Plotting pfaComputeBounded.perf-top.cpu-clock:u.n=2.t=2 ...
+Analysing pfaComputeBounded memory history for n = 2 and for t = 2 ... OK
+  - log found pfaComputeBounded.mem.n=2.t=2.log
+  - PID 9997,  vms : min     322.344, max    1486.297
+  - PID 9997,  rss : min      11.473, max    1040.730
+  - PID 9997,  uss : min       2.379, max    1031.547
+  - PID 9997, swap : min       0.000, max       0.000
+  - PID 9998,  vms : min     322.344, max    1486.297
+  - PID 9998,  rss : min      11.473, max    1040.730
+  - PID 9998,  uss : min       2.379, max    1031.547
+  - PID 9998, swap : min       0.000, max       0.000
+Plotting pfaComputeBounded.memory.n=2.t=2 ...
+Analysing pfaComputeBounded cpu usage history for n = 2 and for t = 2 ... OK
+  - log found pfaComputeBounded.cpu.n=2.t=2.log
+  - PID 9997,  cpu : min       0.000, max      99.000
+  - PID 9998,  cpu : min       0.000, max      99.000
+Plotting pfaComputeBounded.cpu.n=2.t=2 ...
+Plotting pfaComputeBounded.elapse ...
+Plotting pfaComputeBounded.speedup ...
+
+Configuring pfbHPLinpack with EXE = xhpl
+Configuring pfbHPLinpack with MPI = 1
+Configuring pfbHPLinpack with THD = 2
+Configuring pfbHPLinpack with COLOR = red
+Configuring pfbHPLinpack with MARKER = .
+Configuring pfbHPLinpack with LABEL = HPLinpack
+
+Analysing pfbHPLinpack use case statistics ...
+Analysing pfbHPLinpack statistics ...
+Analysing pfbHPLinpack statistics for n = 1 and t = 2 ... OK : MB/s =     124.514, GFlops =       0.006, F/B =       0.046
+  -   GF : log found pfbHPLinpack.perf-stat.n=1.t=2.ext4.gnu.log
+  -   GF :                      r530114:u              1413944 (             1413944) -       0.233 sec  -       0.006 GFlops
+  -   CM : log found pfbHPLinpack.perf-stat.n=1.t=2.ext4.gnu.log
+  -   CM :                 cache-misses:u             30480320 (            30480320) -       0.233 sec  -     124.514 MB/s
+  -   CM :                       r10002:u                    0 (            30480320) -       0.233 sec  -     124.514 MB/s
+
+Configuring pfbIozone with EXE = iozone
+Configuring pfbIozone with ARG = -a -e -c -r "#k" -n 1048 -g 1048 -y 1 -q 128 -i 0 -i 1
+Configuring pfbIozone with THD = 4
+Configuring pfbIozone with COLOR = blue
+Configuring pfbIozone with MARKER = .
+Configuring pfbIozone with LABEL = iozone
+
+Analysing pfbIozone use case statistics ...
+Analysing pfbIozone statistics ...
+Analysing pfbIozone statistics for n = -1 and t = 04 ... OK : MB/s =       0.896, GFlops =       0.000, F/B =       0.011
+  -   GF : log found pfbIozone.perf-stat.n=-1.t=04.ext4.gnu.log
+  -   GF :                      r530114:u                21725 (               21725) -       2.107 sec  -       0.000 GFlops
+  -   CM : log found pfbIozone.perf-stat.n=-1.t=04.ext4.gnu.log
+  -   CM :                 cache-misses:u              1980608 (             1980608) -       2.107 sec  -       0.896 MB/s
+  -   CM :                       r10002:u                    0 (             1980608) -       2.107 sec  -       0.896 MB/s
+
+Configuring pfbStream2 with EXE = stream2.size=67108.exe
+Configuring pfbStream2 with THD = 1
+Configuring pfbStream2 with COLOR = orange
+Configuring pfbStream2 with MARKER = .
+Configuring pfbStream2 with LABEL = stream2
+
+Analysing pfbStream2 use case statistics ...
+Analysing pfbStream2 statistics ...
+Analysing pfbStream2 statistics for n = -1 and t = 01 ... OK : MB/s =      12.566, GFlops =       0.001, F/B =       0.081
+  -   GF : log found pfbStream2.perf-stat.n=-1.t=01.ext4.gnu.log
+  -   GF :                      r530114:u                77275 (               77275) -       0.072 sec  -       0.001 GFlops
+  -   CM : log found pfbStream2.perf-stat.n=-1.t=01.ext4.gnu.log
+  -   CM :                 cache-misses:u               951104 (              951104) -       0.072 sec  -      12.566 MB/s
+  -   CM :                       r10002:u                    0 (              951104) -       0.072 sec  -      12.566 MB/s
+
+Configuring pfbNAS with EXE = bt.S.x
+Configuring pfbNAS with MPI = -1
+Configuring pfbNAS with THD = 4
+Configuring pfbNAS with COLOR = black
+Configuring pfbNAS with MARKER = .
+Configuring pfbNAS with LABEL = NAS
+
+Analysing pfbNAS use case statistics ...
+Analysing pfbNAS statistics ...
+Analysing pfbNAS statistics for n = -1 and t = 04 ... OK : MB/s =      23.314, GFlops =       0.400, F/B =      16.358
+  -   GF : log found pfbNAS.perf-stat.n=-1.t=04.ext4.gnu.log
+  -   GF :                      r530114:u             25191359 (            25191359) -       0.063 sec  -       0.400 GFlops
+  -   CM : log found pfbNAS.perf-stat.n=-1.t=04.ext4.gnu.log
+  -   CM :                 cache-misses:u              1539968 (             1539968) -       0.063 sec  -      23.314 MB/s
+  -   CM :                       r10002:u                    0 (             1539968) -       0.063 sec  -      23.314 MB/s
+
+Configuring pfbIOR with EXE = ior
+Configuring pfbIOR with ARG = -a POSIX -b 004k -t 002k -r -w -i 2
+Configuring pfbIOR with MPI = 1
+Configuring pfbIOR with THD = 1
+Configuring pfbIOR with COLOR = pink
+Configuring pfbIOR with MARKER = .
+Configuring pfbIOR with LABEL = IOR
+
+Analysing pfbIOR use case statistics ...
+Analysing pfbIOR statistics ...
+Analysing pfbIOR statistics for n = 1 and t = 1 ... OK : MB/s =     119.341, GFlops =       0.006, F/B =       0.044
+  -   GF : log found pfbIOR.perf-stat.n=1.t=1.ext4.gnu.log
+  -   GF :                      r530114:u              1340699 (             1340699) -       0.242 sec  -       0.006 GFlops
+  -   CM : log found pfbIOR.perf-stat.n=1.t=1.ext4.gnu.log
+  -   CM :                 cache-misses:u             30270848 (            30270848) -       0.242 sec  -     119.341 MB/s
+  -   CM :                       r10002:u                    0 (            30270848) -       0.242 sec  -     119.341 MB/s
+
+Configuring pfbHydro with EXE = hydro
+Configuring pfbHydro with ARG = -i Hydro.impl=HydroC99_2DMpi.nxy=100.nxystep=050.n=4.t=1.nml
+Configuring pfbHydro with MPI = 4
+Configuring pfbHydro with THD = 1
+Configuring pfbHydro with COLOR = green
+Configuring pfbHydro with MARKER = .
+Configuring pfbHydro with LABEL = Hydro
+
+Analysing pfbHydro use case statistics ...
+Analysing pfbHydro statistics ...
+Analysing pfbHydro statistics for n = 4 and t = 1 ... OK : MB/s =     171.691, GFlops =       1.178, F/B =       6.545
+  -   GF : log found pfbHydro.perf-stat.n=4.t=1.ext4.gnu.log
+  -   GF :                      r530114:u           1305815748 (          1305815748) -       1.108 sec  -       1.178 GFlops
+  -   CM : log found pfbHydro.perf-stat.n=4.t=1.ext4.gnu.log
+  -   CM :                 cache-misses:u            199519360 (           199519360) -       1.108 sec  -     171.691 MB/s
+  -   CM :                       r10002:u                    0 (           199519360) -       1.108 sec  -     171.691 MB/s
+
+Configuring pfbStream with EXE = stream.size=1342.exe
+Configuring pfbStream with THD = 1
+Configuring pfbStream with COLOR = magenta
+Configuring pfbStream with MARKER = .
+Configuring pfbStream with LABEL = stream
+
+Analysing pfbStream use case statistics ...
+Analysing pfbStream statistics ...
+Analysing pfbStream statistics for n = -1 and t = 01 ... OK : MB/s =     252.060, GFlops =       0.005, F/B =       0.020
+  -   GF : log found pfbStream.perf-stat.n=-1.t=01.ext4.gnu.log
+  -   GF :                      r530114:u                13846 (               13846) -       0.003 sec  -       0.005 GFlops
+  -   CM : log found pfbStream.perf-stat.n=-1.t=01.ext4.gnu.log
+  -   CM :                 cache-misses:u               689472 (              689472) -       0.003 sec  -     252.060 MB/s
+  -   CM :                       r10002:u                    0 (              689472) -       0.003 sec  -     252.060 MB/s
+
+Analysing benchmark logs ...
+Analysing    stream: maximum =   33772.500    MB/s, stream.size=1342.n=1.t=1.gnu.ext4.more.quick.log
+                                                    N = 1342, step = Add
+Analysing   stream2: maximum =   48945.700    MB/s, stream2.size=67108.n=1.t=1.gnu.ext4.less.quick.log
+                                                    N = 220, step = DOT
+Analysing    iozone: maximum =    4165.951    MB/s, iozone.size=1048.MinSz=1048.MaxSz=1048.MinRec=1.MaxRec=128.n=1.t=4.gnu.ext4.less.quick.log
+                                                    file size = 1 MB, record size = 64 kB, step = reread
+Analysing       IOR: maximum =     454.100    MB/s, IOR.block=004k.transfer=002k.align=002k.a=POSIX.n=1.t=1.xxxxx.openmpi.gnu.ext4.less.quick.log
+                                                    block size = 004k, transfer size = 002k, step = n=1
+Analysing HPLinpack: maximum =       0.193 GFlop/s, HPL.size=366.div=0016.block=08.n=1.t=2.openmpi.gnu.ext4.less.quick.log
+                                                    N = 22, NB = 2
+Analysing     Hydro: maximum =       3.056 GFlop/s, Hydro.impl=HydroC99_2DMpi.nxy=100.nxystep=050.n=4.t=1.openmpi.gnu.ext4.less.quick.log
+                                                    nxy = 50, nxystep = 50
+Analysing       NAS: maximum =       3.761 GFlop/s, NAS.impl=NPB3-3-OMP.bench=bt.class=S.n=1.t=4.xxxxxxx.seq.gnu.ext4.log
+
+Plotting the roof line model: ridge point = (       0.073 ,       3.761 ) ...
+
+Total time =      29.219 sec
+
+MLK report:
+                                        types |   # objects |   total size
+============================================= | =========== | ============
+                                         dict |         873 |      1.32 MB
+                                          str |        7563 |    710.50 KB
+                                         list |        1433 |    169.77 KB
+                                      unicode |         176 |    166.16 KB
+                                         code |        1218 |    152.25 KB
+                                         type |         140 |    124.34 KB
+                                          set |         113 |    111.10 KB
+                                        tuple |         434 |     32.47 KB
+                             _sre.SRE_Pattern |          38 |     21.21 KB
+                                      weakref |         239 |     20.54 KB
+                                numpy.ndarray |         150 |     17.97 KB
+                          function (__init__) |         103 |     12.07 KB
+                                     instance |         138 |      9.70 KB
+                                         cell |         163 |      8.91 KB
+  <class 'pkg_resources._vendor.pyparsing.And |         117 |      7.31 KB
+

@@ -1,0 +1,132 @@
+Configuring ...
+Configuring using file : ./dev/debian.i7-3687U.more.json ...
+Configuring architecture features ...
+Configuring cache line size with 64 ...
+Configuring flop per packed SIMD with 2 ...
+Configuring flop per packed SSE with 2 ...
+Configuring build time ...
+Configuring OMPFLAGS with -fopenmp ...
+Configuring run time ...
+Configuring run time with MPIRUN_OPT = --map-by core --allow-run-as-root ...
+Configuring run time with OMP_PROC_BIND = TRUE ...
+Configuring run time with GOMP_CPU_AFFINITY =  ...
+Configuring run time with KMP_AFFINITY =  ...
+Configuring with log extension = gnu ext4
+Configuring plot mode ...
+Configuring plot with figure width 16.0 ...
+Configuring plot with figure height 10.0 ...
+Configuring plot with font size 25 ...
+Configuring plot with legend font size 20 ...
+Configuring perf-top plot with minimum percentage 15 ...
+Configuring perf-top plot with exclude filter pthread PyInt_FromLong ...
+Configuring perf-report plot with minimum percentage 25 ...
+Configuring benchmark mode ...
+Configuring stream benchmark ...
+Configuring stream2 benchmark ...
+Configuring iozone benchmark ...
+Configuring IOR benchmark ...
+Configuring HPLinpack benchmark ...
+Configuring hydro benchmark ...
+Configuring NAS benchmark ...
+Configuring use case mode ...
+Configuring libpfm4 4.7.0 : https://sourceforge.net/projects/perfmon2/files/libpfm4/ ...
+Configuring perf-report with perf-list : cpu-clock page-faults
+Configuring perf-report with libpfm4 : 
+Configuring perf-top with perf-list : cpu-clock cache-misses
+Configuring perf-top with libpfm4 : ARITH:Umask-00 LONGEST_LAT_CACHE:MISS
+Configuring perf-stat for GFlops with perf-list : 
+Configuring perf-stat for GFlops with libpfm4 : ARITH:Umask-00
+Configuring perf-stat for cache misses with perf-list : cache-misses L1-dcache-load-misses
+Configuring perf-stat for cache misses with libpfm4 : LLC-LOAD-MISSES LLC-STORE-MISSES LLC-PREFETCH-MISSES
+
+Downloading ...
+Downloading libpfm4 ...
+Downloading https://sourceforge.net/projects/perfmon2/files/libpfm4/libpfm-4.7.0.tar.gz : OK, no need to download
+
+MLK report:
+                          types |   # objects |   total size
+=============================== | =========== | ============
+                           list |        7095 |    726.09 KB
+                            str |        7174 |    417.67 KB
+                           dict |          22 |     24.02 KB
+                            int |         761 |     17.84 KB
+                        unicode |          74 |      7.68 KB
+              method_descriptor |          12 |    864     B
+             wrapper_descriptor |          10 |    800     B
+          <class 'pyc.plot.plot |           8 |    512     B
+  <class 'pyc.download.download |           8 |    512     B
+                        weakref |           4 |    352     B
+              member_descriptor |           4 |    288     B
+              getset_descriptor |           4 |    288     B
+                          float |           8 |    192     B
+                           file |           1 |    144     B
+                           code |           1 |    128     B
+
+Searching for registers with libpfm4 ...
+Building libpfm4 ... OK (time =       0.063 sec)
+Running libpfm4 ...
+Register r530114 is mapped to ARITH:0x01
+Register r10002 is mapped to LLC-LOAD-MISSES:none
+Register r10202 is mapped to LLC-PREFETCH-MISSES:none
+Register r10102 is mapped to LLC-STORE-MISSES:none
+Register r53412e is mapped to LONGEST_LAT_CACHE:0x41
+
+Configuring pfaBandwidthBounded with LOGID = g++
+Configuring pfaBandwidthBounded with EXE = ./pfaFlopsCacheMisses.exe
+Configuring pfaBandwidthBounded with ARG = 15 1 1 500
+Configuring pfaBandwidthBounded with THD = 1 2
+Configuring pfaBandwidthBounded with COLOR = r g
+Configuring pfaBandwidthBounded with MARKER = ^ ^
+Configuring pfaBandwidthBounded with LABEL = bandwidth bounded
+
+Preparing pfaBandwidthBounded ... OK (time =       0.542 sec)
+
+Running pfaBandwidthBounded.perf-record.n=-1.t=01.ext4.gnu.g++.log ... OK (time =      21.367 sec)
+Running pfaBandwidthBounded.perf-report.n=-1.t=01.ext4.gnu.g++.log ... OK (time =       0.053 sec)
+
+Running pfaBandwidthBounded.perf-record.n=-1.t=02.ext4.gnu.g++.log ... OK (time =      22.937 sec)
+Running pfaBandwidthBounded.perf-report.n=-1.t=02.ext4.gnu.g++.log ... OK (time =       0.052 sec)
+
+Configuring pfaComputeBounded with LOGID = mpic++
+Configuring pfaComputeBounded with EXE = ./pfaFlopsCacheMisses.exe
+Configuring pfaComputeBounded with ARG = 15 1 1 500
+Configuring pfaComputeBounded with MPI = 1 1 2 2
+Configuring pfaComputeBounded with THD = 1 2 1 2
+Configuring pfaComputeBounded with COLOR = r g b c
+Configuring pfaComputeBounded with MARKER = x x x x
+Configuring pfaComputeBounded with LABEL = compute bounded
+
+Preparing pfaComputeBounded ... OK (time =       1.299 sec)
+
+Running pfaComputeBounded.perf-record.n=1.t=1.ext4.gnu.mpic++.log ... OK (time =      21.438 sec)
+Running pfaComputeBounded.perf-report.n=1.t=1.ext4.gnu.mpic++.log ... OK (time =       0.230 sec)
+
+Running pfaComputeBounded.perf-record.n=1.t=2.ext4.gnu.mpic++.log ... OK (time =      21.513 sec)
+Running pfaComputeBounded.perf-report.n=1.t=2.ext4.gnu.mpic++.log ... OK (time =       0.214 sec)
+
+Running pfaComputeBounded.perf-record.n=2.t=1.ext4.gnu.mpic++.log ... OK (time =      24.189 sec)
+Running pfaComputeBounded.perf-report.n=2.t=1.ext4.gnu.mpic++.log ... OK (time =       0.160 sec)
+
+Running pfaComputeBounded.perf-record.n=2.t=2.ext4.gnu.mpic++.log ... OK (time =      25.479 sec)
+Running pfaComputeBounded.perf-report.n=2.t=2.ext4.gnu.mpic++.log ... OK (time =       0.204 sec)
+
+Configuring pfaPython with EXE = ./pfaPython.py
+Configuring pfaPython with ARG = 50000000 50000000
+Configuring pfaPython with COLOR = r
+Configuring pfaPython with MARKER = s
+Configuring pfaPython with LABEL = python script
+
+Running pfaPython.perf-record.n=-1.t=01.ext4.gnu.log ... OK (time =      29.575 sec)
+Running pfaPython.perf-report.n=-1.t=01.ext4.gnu.log ... OK (time =       0.138 sec)
+
+Total time =     197.144 sec
+
+MLK report:
+                     types |   # objects |   total size
+========================== | =========== | ============
+                      list |          13 |      1.23 KB
+                       str |          13 |    842     B
+  <class 'subprocess.Popen |           4 |    256     B
+                       int |           2 |     48     B
+                   unicode |           0 |     48     B
+
