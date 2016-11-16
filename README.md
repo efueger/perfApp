@@ -1,3 +1,5 @@
+change 1 - added PR integration
+
 usage: perfApp.py [-h] [-f] [-c J] [-d] [-n N] [-s]
 
                   {check,bench,ucase,plot} ...
