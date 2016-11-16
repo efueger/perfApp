@@ -1,4 +1,5 @@
-change 1 - added PR integration
+change 1 - added PR integration (merged directly into master)
+change 2 - opened PR
 
 usage: perfApp.py [-h] [-f] [-c J] [-d] [-n N] [-s]
 
